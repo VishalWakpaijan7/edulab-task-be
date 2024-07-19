@@ -1,0 +1,15 @@
+{
+  "name": "edulab-task-be",
+  "version": "1.0.0",
+  "description": "backend for random pdf i-card generator",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "vishal wakpaijan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
