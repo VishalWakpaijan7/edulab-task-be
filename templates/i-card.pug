@@ -1,0 +1,106 @@
+doctype html
+html
+  head
+    title Student ID Card
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .page {
+        page-break-after: always;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .id-card {
+        width: 300px;
+        height: 450px;
+        border: 2px solid #000;
+        border-radius: 15px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .header {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border-bottom: 2px solid #000;
+        font-size: 18px;
+      }
+      .photo {
+        margin-top: 20px;
+      }
+      .photo  {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 2px solid #4CAF50;
+        object-fit: cover;
+      }
+      .name {
+        height: 100px;
+        width: 100px;
+      }
+      .name h2 {
+        display: grid;
+        place-items: center;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 2px solid #4CAF50;
+        font-size:3rem;
+        color:#444;
+      }
+      .info {
+        text-align: center;
+        padding: 0 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .info h3 {
+        margin: 10px 0;
+        font-size: 20px;
+        color: #333;
+      }
+      .info p {
+        margin: 5px 0;
+        color: #666;
+        font-size: 16px;
+      }
+      .footer {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        border-top: 2px solid #000;
+        font-size: 14px;
+      }
+  body
+    each student in data
+      if student
+        .page
+          .id-card
+            .header
+              h2 WE School
+            .name
+              h2= student.login[0].toUpperCase()
+            .info
+              h3= student.login.toUpperCase()
+              p Class: PGDM
+              p Student Code: PGDM-#{student.id}
+            .footer
+              p= student.html_url

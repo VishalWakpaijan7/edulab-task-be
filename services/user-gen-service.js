@@ -6,9 +6,9 @@ const generateRandomUsers = async () => {
     let result;
     try {
         result = await axios.get(URL);
+        return result.data
     } catch (err) {
         throw new CustomError(err);
     }
-    return result
 };
 module.exports = generateRandomUsers
