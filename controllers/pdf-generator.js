@@ -14,7 +14,6 @@ const generateRandomPDF = (req, res, next) => {
                 rootDir.splice(rootDir.length - 1, 1);
                 const templatePath = path.join(rootDir.join("\\"), './templates/i-card.pug');
                 const html = pug.renderFile(templatePath, { data });
-                console.log(data);
                 await page.setContent(html, { waitUntil: 'domcontentloaded' });
                 await page.pdf({
                     format: 'A4',
