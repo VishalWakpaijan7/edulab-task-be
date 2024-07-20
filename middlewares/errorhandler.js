@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const loggerFunction = (err, req, res, next) => {
+    if(res.url === '/favicon.ico') return;
     let errorLogStr = `${req.method} ${req.hostname}$ ${req.url} | ${new Date(Date.now()).toString()} | ${err}\n`;
     fs.appendFile("./public/log.txt", errorLogStr, (err) => { if (err) next(err); });
 };
